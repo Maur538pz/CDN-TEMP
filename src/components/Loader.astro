@@ -1,0 +1,26 @@
+---
+import rive from "@rive-app/canvas"
+
+const render = document.getElementById('canvas-render')
+
+if( render instanceof HTMLCanvasElement){
+    const r = new rive.Rive({
+// Hosted .riv asset, or a local one. Uncomment line 8 to try with
+// a local basketball.riv asset, or add your own!
+src: "https://cdn.rive.app/animations/vehicles.riv",
+// src: "basketball.riv",
+canvas:render,
+stateMachines: "bumpy",
+autoplay: true,
+onLoad: () => {
+    r.resizeDrawingSurfaceToCanvas();
+}})
+}else{
+    console.log('no es un elem,ento canvas')
+}
+---
+
+<canvas id="canvas-render" width="500" height="500">
+</canvas>
+
+

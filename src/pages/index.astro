@@ -1,0 +1,54 @@
+---
+import { Preloader} from '../components/Preloader.jsx'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<div class="hiden" id="loader"><Preloader  client:load/></div>
+	<body id="body">
+		<h1>Astro</h1>
+		<img src="https://pixewall.com/wp-content/uploads/2023/03/4k-Cityscape-Desktop-Wallpaper-1024x576.png" alt="">
+		<img src="https://pixewall.com/wp-content/uploads/2021/09/McLaren-Raining-Night-4K-Car-Live-Wallpaper-1024x576.jpg" alt="">
+		<img src="https://pixewall.com/wp-content/uploads/2023/03/Beautiful-Night-Sky-Sunset-4k-Desktop-Wallpaper-1024x576.jpg" alt="">
+		<img src="https://pixewall.com/wp-content/uploads/2022/04/cloud-770x470.webp" alt="">
+		<img src="https://pixewall.com/wp-content/uploads/2022/04/green-pattern-770x470.webp" alt="">
+		
+	</body>
+	<script>
+
+
+		window.onload = function() {
+			console.log("page is fully loaded");
+			const loader = document.getElementById('loader')
+			
+			if(loader){
+				loader.style.display = "none";
+				document.body.style.overflow = "auto"
+				
+			}
+		}
+	</script>
+</html>
+
+<style>
+	.hiden{
+		background-color: aqua;
+		height: 100vh;
+		width: 100%;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	body{
+		overflow: hidden;
+	}
+</style>
